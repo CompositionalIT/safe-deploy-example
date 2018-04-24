@@ -36,6 +36,7 @@ Target "Publish" (fun () ->
   let yarn = platformTool "yarn" "yarn.cmd"
   run yarn "install --frozen-lockfile" __SOURCE_DIRECTORY__
   run "dotnet" (sprintf "publish %s -c release -o %s" serverPath deployDir) __SOURCE_DIRECTORY__
+  run "dotnet" "restore" clientPath
   run "dotnet" "fable webpack -- -p" clientPath
   CopyDir deployPublicPath publicPath allFiles
 )
