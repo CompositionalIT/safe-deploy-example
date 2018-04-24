@@ -5,6 +5,6 @@ bin/
 packages/
 paket-files/
 node_modules/
-src/Client/public/
+src/Client/public/bundle.js*
 deploy/
 deploy.zip
